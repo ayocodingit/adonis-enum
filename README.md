@@ -6,6 +6,66 @@ Installation
 npm i adonis-enum --save
 ```
 
+Stored inside the app/Enums/... directory
+```javascript
+const Enum = require('adonis-enum')
+
+module.exports = new Enum({
+  SUPERADMIN: 1,
+  CUSTOMER: 2
+})
+```
+### Example
+use in validation
+```javascript
+const RoleEnum = use('App/Enums/RoleEnum')
+
+console.log(RoleEnum.valuesString) // 1,2
+console.log(RoleEnum.valuesStringWithSpace) // 1, 2
+
+get rules () {
+  return {
+    role: `required|in:${RoleEnum.valuesString}`
+  }
+}
+
+get messages () {
+  return {
+    'role.in': formatMessage('validation.in_array', { attribute: 'role', other: RoleEnum.valuesStringWithSpace })
+  }
+}
+```
+
+use in Factory
+```javascript
+const Factory = use('Factory')
+const RoleEnum = use('App/Enums/RoleEnum')
+const Config = use('Config')
+
+console.log(RoleEnum.values) // [1, 2]
+
+Factory.blueprint('App/Models/User', (faker) => {
+  return {
+    role: faker.pickone(RoleEnum.values),
+  }
+})
+```
+
+use in Model
+```javascript
+const RoleEnum = use('App/Enums/RoleEnum')
+
+console.log(RoleEnum.make(1).key) // 'SUPERADMIN'
+console.log(RoleEnum.make(2).key) // 'CUSTOMER'
+
+class User extends Model {
+  getRole (role) {
+    return RoleEnum.make(role).key
+  }
+}
+```
+
+
 ## License
 Copyright (c) 2021
 
