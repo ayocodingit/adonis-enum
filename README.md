@@ -40,7 +40,6 @@ use in Factory
 ```javascript
 const Factory = use('Factory')
 const RoleEnum = use('App/Enums/RoleEnum')
-const Config = use('Config')
 
 console.log(RoleEnum.values) // [1, 2]
 
