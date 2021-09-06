@@ -22,6 +22,8 @@ const RoleEnum = use('App/Enums/RoleEnum')
 
 console.log(RoleEnum.valuesString) // 1,2
 console.log(RoleEnum.valuesStringWithSpace) // 1, 2
+console.log(RoleEnum.keysString) // SUPERADMIN,CUSTOMER
+console.log(RoleEnum.keysStringWithSpace) // SUPERADMIN, CUSTOMER
 
 get rules () {
   return {
@@ -42,6 +44,7 @@ const Factory = use('Factory')
 const RoleEnum = use('App/Enums/RoleEnum')
 
 console.log(RoleEnum.values) // [1, 2]
+console.log(RoleEnum.keys) // ['SUPERADMIN', 'CUSTOMER']
 
 Factory.blueprint('App/Models/User', (faker) => {
   return {
@@ -56,6 +59,9 @@ const RoleEnum = use('App/Enums/RoleEnum')
 
 console.log(RoleEnum.make(1).key) // 'SUPERADMIN'
 console.log(RoleEnum.make(2).key) // 'CUSTOMER'
+
+console.log(RoleEnum.make(1).value) // 1
+console.log(RoleEnum.make(2).value) // 2
 
 class User extends Model {
   getRole (role) {
