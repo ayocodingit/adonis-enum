@@ -63,6 +63,9 @@ console.log(RoleEnum.make(2).key) // 'CUSTOMER'
 console.log(RoleEnum.make(1).value) // 1
 console.log(RoleEnum.make(2).value) // 2
 
+console.log(RoleEnum.has('BACKOFFICE')) // false
+console.log(RoleEnum.has('SUPERADMIN')) // true
+
 class User extends Model {
   getRole (role) {
     return RoleEnum.make(role).key
