@@ -60,7 +60,7 @@ class Enum {
   }
 
   has (value) {
-    return this.#items.has(value)
+    return this.#items.isDefined(value)
   }
 }
 
