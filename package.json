@@ -1,0 +1,28 @@
+{
+  "name": "adonis-enum",
+  "version": "1.0.0",
+  "description": "adonis enum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayocodingit/adonis-enum.git"
+  },
+  "keywords": [
+    "adonis",
+    "enum",
+    "node",
+    "express"
+  ],
+  "author": "ayocodingit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayocodingit/adonis-enum/issues"
+  },
+  "homepage": "https://github.com/ayocodingit/adonis-enum#readme",
+  "dependencies": {
+    "enum": "^3.0.4"
+  }
+}
