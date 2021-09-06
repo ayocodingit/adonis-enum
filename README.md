@@ -31,7 +31,7 @@ get rules () {
 
 get messages () {
   return {
-    'role.in': formatMessage('validation.in_array', { attribute: 'role', other: RoleEnum.valuesStringWithSpace })
+    'role.in': `The role field does not exist in ${RoleEnum.valuesStringWithSpace}`.
   }
 }
 ```
