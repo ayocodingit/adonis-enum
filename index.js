@@ -1,6 +1,6 @@
 'use strict'
 
-const Enums = require('enum')
+const Enums = require('./enum')
 
 class Enum {
   #items;
